@@ -7,20 +7,13 @@ const Index = () => {
   const news = [
     {
       id: 1,
-      title: "Победа в региональном турнире",
-      date: "15 ноября 2024",
-      description: "Z-LEGION одержала уверенную победу в региональном чемпионате Standoff 2, обыграв соперников со счетом 3:0",
-      category: "Турнир"
-    },
-    {
-      id: 2,
       title: "Новый игрок в составе",
       date: "10 ноября 2024",
       description: "Рады приветствовать нового участника команды! Встречайте профессионального игрока с опытом более 3 лет",
       category: "Состав"
     },
     {
-      id: 3,
+      id: 2,
       title: "Тренировочный буткемп",
       date: "5 ноября 2024",
       description: "Команда провела интенсивный тренировочный лагерь, отрабатывая новые стратегии и тактики игры",
@@ -29,9 +22,9 @@ const Index = () => {
   ];
 
   const achievements = [
-    { icon: "Trophy", text: "1 место - Региональный турнир" },
-    { icon: "Target", text: "Top 10 - Национальный рейтинг" },
-    { icon: "Award", text: "5+ побед в сезоне" },
+    { icon: "Trophy", text: "Пока что тут ничего" },
+    { icon: "Target", text: "Клан постоянно развивается" },
+    { icon: "Award", text: "Пока что тут ничего" },
     { icon: "Users", text: "Профессиональный состав" }
   ];
 
@@ -82,9 +75,9 @@ const Index = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
               <img 
-                src="https://cdn.poehali.dev/projects/c59a8e30-bbe1-4978-92e0-7c98625f5d22/files/1024a389-c432-42da-bbbc-4719fd5a1c76.jpg"
+                src="https://cdn.poehali.dev/files/eeda75c1-3683-4f05-944c-f5b8055508b4.png"
                 alt="Z-LEGION Logo"
-                className="w-48 h-48 mx-auto rounded-2xl shadow-2xl shadow-red-600/50 hover:scale-105 transition-transform duration-300"
+                className="w-48 h-48 mx-auto rounded-full shadow-2xl shadow-red-600/50 hover:scale-105 transition-transform duration-300"
               />
               <h2 className="text-6xl md:text-8xl font-bold text-glow-red">
                 Z-LEGION
@@ -224,7 +217,7 @@ const Index = () => {
               </div>
               
               <p className="text-sm text-gray-500">
-                © 2024 Z-LEGION. Все права защищены.
+                © 2025 Z-LEGION. Все права защищены.
               </p>
             </div>
           </div>
