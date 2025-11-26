@@ -4,22 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
-  const news = [
-    {
-      id: 1,
-      title: "Новый игрок в составе",
-      date: "10 ноября 2024",
-      description: "Рады приветствовать нового участника команды! Встречайте профессионального игрока с опытом более 3 лет",
-      category: "Состав"
-    },
-    {
-      id: 2,
-      title: "Тренировочный буткемп",
-      date: "5 ноября 2024",
-      description: "Команда провела интенсивный тренировочный лагерь, отрабатывая новые стратегии и тактики игры",
-      category: "Тренировки"
-    }
-  ];
+  const news: any[] = [];
 
   const achievements = [
     { icon: "Trophy", text: "Пока что тут ничего" },
@@ -49,6 +34,7 @@ const Index = () => {
             <nav className="hidden md:flex items-center gap-6">
               <a href="#about" className="hover:text-red-500 transition-colors">О команде</a>
               <a href="#news" className="hover:text-red-500 transition-colors">Новости</a>
+              <a href="#recruit" className="hover:text-red-500 transition-colors">Набор</a>
               <Button 
                 className="bg-red-600 hover:bg-red-700 text-white"
                 onClick={() => window.open('https://t.me/zarastand2', '_blank')}
@@ -101,10 +87,10 @@ const Index = () => {
                   size="lg"
                   variant="outline"
                   className="border-red-600 text-red-500 hover:bg-red-600/10"
-                  onClick={() => document.getElementById('news')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('recruit')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  <Icon name="Newspaper" size={20} className="mr-2" />
-                  Наши новости
+                  <Icon name="UserPlus" size={20} className="mr-2" />
+                  Присоединиться
                 </Button>
               </div>
             </div>
@@ -150,45 +136,100 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {news.map((item, index) => (
-                <Card 
-                  key={item.id}
-                  className="bg-zinc-900 border-red-600/20 hover:border-red-600 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-red-600/20 overflow-hidden group animate-scale-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="h-2 bg-gradient-to-r from-red-600 to-red-900" />
-                  <div className="p-6 space-y-4">
-                    <div className="flex items-center justify-between">
-                      <Badge variant="outline" className="border-red-600/50 text-red-500">
-                        {item.category}
-                      </Badge>
-                      <div className="flex items-center text-sm text-gray-500">
-                        <Icon name="Calendar" size={14} className="mr-1" />
-                        {item.date}
-                      </div>
-                    </div>
-                    <h4 className="text-2xl font-bold group-hover:text-red-500 transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-400 leading-relaxed">
-                      {item.description}
-                    </p>
+            <div className="max-w-2xl mx-auto">
+              <Card className="bg-zinc-900 border-red-600/20 p-12">
+                <div className="text-center space-y-4">
+                  <div className="w-20 h-20 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center mx-auto">
+                    <Icon name="Info" size={40} />
                   </div>
-                </Card>
-              ))}
+                  <h4 className="text-3xl font-bold text-gray-400">Пока что тут ничего</h4>
+                  <p className="text-gray-500">Следите за обновлениями в нашем Telegram-канале</p>
+                </div>
+              </Card>
             </div>
 
-            <div className="text-center mt-12">
-              <Button 
-                size="lg"
-                className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8"
-                onClick={() => window.open('https://t.me/zarastand2', '_blank')}
-              >
-                <Icon name="ArrowRight" size={20} className="mr-2" />
-                Все новости в Telegram
-              </Button>
+
+          </div>
+        </section>
+
+        <section id="recruit" className="py-20 bg-black">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16 animate-fade-in">
+              <Badge className="mb-4 bg-red-600/20 text-red-500 border-red-600">Набор игроков</Badge>
+              <h3 className="text-5xl font-bold mb-4">Присоединяйся к команде</h3>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Мы ищем талантливых игроков в Standoff 2. Если ты готов стать частью Z-LEGION, свяжись с нами!
+              </p>
             </div>
+
+            <Card className="max-w-2xl mx-auto bg-zinc-900 border-red-600/20 overflow-hidden">
+              <div className="h-2 bg-gradient-to-r from-red-600 to-red-900" />
+              <div className="p-8 space-y-8">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="Send" size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-bold mb-2">Шаг 1: Свяжись в Telegram</h4>
+                      <p className="text-gray-400 mb-3">Напиши нам в Telegram для начала процесса отбора</p>
+                      <Button 
+                        className="bg-red-600 hover:bg-red-700 text-white font-semibold"
+                        onClick={() => window.open('https://t.me/DikiZara457', '_blank')}
+                      >
+                        <Icon name="Send" size={16} className="mr-2" />
+                        @DikiZara457
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="User" size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-bold mb-2">Шаг 2: Укажи свой игровой ID</h4>
+                      <p className="text-gray-400">Отправь свой игровой ID из Standoff 2, чтобы мы могли оценить твои навыки</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-900 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="Zap" size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-bold mb-2">Шаг 3: Пройди отбор</h4>
+                      <p className="text-gray-400">Мы рассмотрим твою заявку и проведем тестовую игру</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-black/50 rounded-lg p-6 border border-red-600/20">
+                  <h5 className="font-bold text-lg mb-3 flex items-center gap-2">
+                    <Icon name="Star" size={20} className="text-red-500" />
+                    Требования к игрокам:
+                  </h5>
+                  <ul className="space-y-2 text-gray-400">
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={16} className="text-red-500 flex-shrink-0" />
+                      Опыт игры в Standoff 2
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={16} className="text-red-500 flex-shrink-0" />
+                      Командный игрок
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={16} className="text-red-500 flex-shrink-0" />
+                      Желание развиваться и побеждать
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={16} className="text-red-500 flex-shrink-0" />
+                      Регулярное участие в тренировках
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
           </div>
         </section>
 
